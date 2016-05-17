@@ -26,7 +26,7 @@ Console = function () {
 
 
     {for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}
-      console.log((0, _indent2.default)(args.join(" "), this.level, INDENT));
+      (0, _logUpdate2.default)((0, _indent2.default)(args.join(" "), this.level, INDENT));
       _logUpdate2.default.done();} }, { key: "info", value: function info() 
 
 
