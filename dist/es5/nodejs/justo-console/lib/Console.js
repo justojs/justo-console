@@ -26,7 +26,7 @@ Console = function () {
 
 
     {for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}
-      console.log((0, _indent2.default)(args.join(""), this.level, INDENT));
+      console.log((0, _indent2.default)(args.join(" "), this.level, INDENT));
       _logUpdate2.default.done();} }, { key: "info", value: function info() 
 
 
@@ -42,14 +42,14 @@ Console = function () {
 
     {
       _logUpdate2.default.done();for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {args[_key2] = arguments[_key2];}
-      (0, _logUpdate2.default)((0, _indent2.default)(args.join(""), this.level, INDENT));} }, { key: "update", value: function update() 
+      (0, _logUpdate2.default)((0, _indent2.default)(args.join(" "), this.level, INDENT));} }, { key: "update", value: function update() 
 
 
 
 
 
     {for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {args[_key3] = arguments[_key3];}
-      (0, _logUpdate2.default)((0, _indent2.default)(args.join(""), this.level, INDENT));} }, { key: "clear", value: function clear() 
+      (0, _logUpdate2.default)((0, _indent2.default)(args.join(" "), this.level, INDENT));} }, { key: "clear", value: function clear() 
 
 
 
@@ -63,5 +63,5 @@ Console = function () {
 
 
     {for (var _len4 = arguments.length, args = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {args[_key4] = arguments[_key4];}
-      _logUpdate2.default.stderr((0, _indent2.default)(args.join(""), this.level, INDENT));
+      _logUpdate2.default.stderr((0, _indent2.default)(args.join(" "), this.level, INDENT));
       _logUpdate2.default.stderr.done();} }]);return Console;}();exports.default = Console;
