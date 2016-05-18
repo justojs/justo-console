@@ -19,7 +19,7 @@ Console = function () {
     if (!opts) opts = {};
 
 
-    Object.defineProperty(this, "level", { value: opts.level || 0, enumerable: true, writable: true });}_createClass(Console, [{ key: "log", value: function log() 
+    Object.defineProperty(this, "level", { value: opts.level || 0, writable: true });}_createClass(Console, [{ key: "log", value: function log() 
 
 
 
