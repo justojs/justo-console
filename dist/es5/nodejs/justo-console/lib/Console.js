@@ -65,6 +65,7 @@ Console = function () {
 
     {
       this.update.apply(this, arguments);
+      _logUpdate2.default.done();
       this.updatable = false;} }, { key: "clear", value: function clear() 
 
 
