@@ -17,46 +17,73 @@ suite("Console", function() {
   suite("#log()", function() {
     test("log()", function() {
       console.log();
+      console.updatable.must.be.eq(false);
     });
 
     test("log(arg)", function() {
       console.log("hello");
+      console.updatable.must.be.eq(false);
     });
 
-    test("log(args)", function() {
+    test("log(...args)", function() {
       console.log("hello", "bye");
+      console.updatable.must.be.eq(false);
     });
   });
 
   test("#info()", function() {
     console.info("buongiorno");
+    console.updatable.must.be.eq(false);
   });
 
   suite("#print()", function() {
     test("print()", function() {
       console.print();
+      console.updatable.must.be.eq(true);
     });
 
     test("print(arg)", function() {
       console.print("buongiorno");
+      console.updatable.must.be.eq(true);
     });
 
-    test("print(args)", function() {
+    test("print(...args)", function() {
       console.print("buongiorno", "buonasera");
+      console.updatable.must.be.eq(true);
     });
   });
 
   suite("#update()", function() {
     test("update()", function() {
       console.update();
+      console.updatable.must.be.eq(true);
     });
 
     test("update(arg)", function() {
       console.update("hello");
+      console.updatable.must.be.eq(true);
     });
 
-    test("update(args)", function() {
+    test("update(...args)", function() {
       console.update("hello", "hi");
+      console.updatable.must.be.eq(true);
+    });
+  });
+
+  suite("#confirm()", function() {
+    test("confirm()", function() {
+      console.confirm();
+      console.updatable.must.be.eq(false);
+    });
+
+    test("confirm(arg)", function() {
+      console.confirm("hello");
+      console.updatable.must.be.eq(false);
+    });
+
+    test("confirm(...args)", function() {
+      console.confirm("hello", "hi");
+      console.updatable.must.be.eq(false);
     });
   });
 

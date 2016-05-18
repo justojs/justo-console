@@ -19,13 +19,19 @@ Console = function () {
     if (!opts) opts = {};
 
 
-    Object.defineProperty(this, "level", { value: opts.level || 0, writable: true });}_createClass(Console, [{ key: "log", value: function log() 
+    Object.defineProperty(this, "level", { value: opts.level || 0, writable: true });
+    Object.defineProperty(this, "updatable", { value: false, writable: true });}_createClass(Console, [{ key: "log", value: function log() 
 
 
 
 
 
-    {for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}
+    {
+      if (this.updatable) {
+        _logUpdate2.default.done();
+        this.updatable = false;}for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}
+
+
       (0, _logUpdate2.default)((0, _indent2.default)(args.join(" "), this.level, INDENT));
       _logUpdate2.default.done();} }, { key: "info", value: function info() 
 
@@ -42,14 +48,24 @@ Console = function () {
 
     {
       _logUpdate2.default.done();for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {args[_key2] = arguments[_key2];}
-      (0, _logUpdate2.default)((0, _indent2.default)(args.join(" "), this.level, INDENT));} }, { key: "update", value: function update() 
+      (0, _logUpdate2.default)((0, _indent2.default)(args.join(" "), this.level, INDENT));
+      this.updatable = true;} }, { key: "update", value: function update() 
 
 
 
 
 
     {for (var _len3 = arguments.length, args = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {args[_key3] = arguments[_key3];}
-      (0, _logUpdate2.default)((0, _indent2.default)(args.join(" "), this.level, INDENT));} }, { key: "clear", value: function clear() 
+      (0, _logUpdate2.default)((0, _indent2.default)(args.join(" "), this.level, INDENT));
+      this.updatable = true;} }, { key: "confirm", value: function confirm() 
+
+
+
+
+
+    {
+      this.update.apply(this, arguments);
+      this.updatable = false;} }, { key: "clear", value: function clear() 
 
 
 
