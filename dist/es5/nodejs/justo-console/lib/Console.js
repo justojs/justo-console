@@ -1,4 +1,5 @@
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();
+var _util = require("util");var _util2 = _interopRequireDefault(_util);
 var _logUpdate = require("log-update");var _logUpdate2 = _interopRequireDefault(_logUpdate);
 var _indent = require("./indent");var _indent2 = _interopRequireDefault(_indent);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}
 
@@ -33,7 +34,14 @@ Console = function () {
 
 
       (0, _logUpdate2.default)((0, _indent2.default)(args.join(" "), this.level, INDENT));
-      _logUpdate2.default.done();} }, { key: "info", value: function info() 
+      _logUpdate2.default.done();} }, { key: "dir", value: function dir(
+
+
+
+
+
+    obj) {
+      this.log(_util2.default.inspect(obj));} }, { key: "info", value: function info() 
 
 
 

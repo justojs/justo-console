@@ -31,6 +31,11 @@ suite("Console", function() {
     });
   });
 
+  test("#dir(obj)", function() {
+    console.dir({x: 1, y: 2});
+    console.updatable.must.be.eq(false);
+  });
+
   test("#info()", function() {
     console.info("buongiorno");
     console.updatable.must.be.eq(false);
